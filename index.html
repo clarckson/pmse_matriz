@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Matriz de Atividades - PMSE</title>
     <link rel="icon" type="image/png" href="https://intranet.pm.se.gov.br/portal/images/favicon.png">
     <style>
@@ -10,20 +10,35 @@
         body, html {
             margin: 0;
             padding: 0;
+            width: 100%;
             height: 100%;
             overflow: hidden; /* Evita barra de rolagem dupla */
+            background-color: #0f172a;
         }
-        /* Faz o iframe ocupar tudo */
+        /* Faz o iframe ocupar a tela inteira */
         iframe {
             display: block;
-            width: 100vw; /* 100% da largura da tela */
-            height: 100vh; /* 100% da altura da tela */
+            width: 100vw;
+            height: 100vh;
             border: none;
         }
     </style>
 </head>
 <body>
-    <iframe src="https://matriz-de-atividades-pmse.ai.studio/"></iframe>
+
+    <!-- 
+      ATRIBUTOS ESSENCIAIS PARA GPS E OPERAÇÃO OFFLINE:
+      1. allow="geolocation; camera; clipboard-write;" -> Libera a captura de coordenadas GPS
+      2. allowfullscreen="true" -> Permite tela cheia
+      3. sandbox (opcional, se não colocado o iframe herda permissões da mesma origem / externa)
+    -->
+    <iframe 
+        src="https://matriz-de-atividades-pmse.ai.studio/"
+        allow="geolocation *; camera *; clipboard-write *"
+        allowfullscreen="true"
+        loading="eager"
+        title="Matriz de Atividades Operacionais PMSE">
+    </iframe>
     
 </body>
 </html>
