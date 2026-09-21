@@ -6,16 +6,16 @@
     <title>Matriz de Atividades - PMSE</title>
     <link rel="icon" type="image/png" href="https://intranet.pm.se.gov.br/portal/images/favicon.png">
     <style>
-        /* Tira as margens padrão do navegador */
-        body, html {
+        /* Tira as margens e barras de rolagem da janela externa */
+        html, body {
             margin: 0;
             padding: 0;
             width: 100%;
             height: 100%;
-            overflow: hidden; /* Evita barra de rolagem dupla */
-            background-color: #0f172a;
+            overflow: hidden;
+            background-color: #0b1120; /* Fundo escuro enquanto o app carrega */
         }
-        /* Faz o iframe ocupar a tela inteira */
+        /* Faz o iframe ocupar exatamente 100% da tela visível */
         iframe {
             display: block;
             width: 100vw;
@@ -25,20 +25,12 @@
     </style>
 </head>
 <body>
-
-    <!-- 
-      ATRIBUTOS ESSENCIAIS PARA GPS E OPERAÇÃO OFFLINE:
-      1. allow="geolocation; camera; clipboard-write;" -> Libera a captura de coordenadas GPS
-      2. allowfullscreen="true" -> Permite tela cheia
-      3. sandbox (opcional, se não colocado o iframe herda permissões da mesma origem / externa)
-    -->
     <iframe 
         src="https://matriz-de-atividades-pmse.ai.studio/"
-        allow="geolocation *; camera *; clipboard-write *"
+        allow="geolocation; autoplay; camera; microphone; clipboard-write; fullscreen; display-capture"
         allowfullscreen="true"
-        loading="eager"
-        title="Matriz de Atividades Operacionais PMSE">
+        webkitallowfullscreen="true"
+        mozallowfullscreen="true">
     </iframe>
-    
 </body>
 </html>
